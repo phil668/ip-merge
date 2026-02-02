@@ -1,5 +1,5 @@
 {
-  "name": "pkg-placeholder",
+  "name": "cidr-merge",
   "type": "module",
   "version": "0.0.0",
   "packageManager": "pnpm@10.25.0",
@@ -15,9 +15,6 @@
   "bugs": "https://github.com/antfu/pkg-placeholder/issues",
   "keywords": [],
   "sideEffects": false,
-  "bin": {
-    "ip-merge": "./dist/cli.mjs"
-  },
   "exports": {
     ".": "./dist/index.mjs",
     "./package.json": "./package.json"
@@ -25,6 +22,9 @@
   "main": "./dist/index.mjs",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.mts",
+  "bin": {
+    "cidr-merge": "./dist/cli.mjs"
+  },
   "files": [
     "dist"
   ],
@@ -38,6 +38,9 @@
     "test": "vitest",
     "typecheck": "tsc",
     "prepare": "simple-git-hooks"
+  },
+  "dependencies": {
+    "cidr-tools": "catalog:"
   },
   "devDependencies": {
     "@antfu/eslint-config": "catalog:cli",
@@ -63,8 +66,5 @@
   },
   "lint-staged": {
     "*": "eslint --fix"
-  },
-  "dependencies": {
-    "cidr-tools": "catalog:"
   }
 }
